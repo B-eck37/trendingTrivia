@@ -1,0 +1,17 @@
+<div class="question-wrapper">
+    
+    <!-- <div>Hello 1</div> -->
+    <h3 class='diffCtrl'>{{diffCtrl.item.question}}</h3>
+    <div class='{green: question.labelDifficulty == 'Easy', yellow: question.labelDifficulty == 'Medium', red: question.labelDifficulty == 'Hard'}'>{{diffCtrl.item.difficulty}}</div>
+    <div class="gear">
+      <img src="/styles/assets/gear.svg" alt="">
+    </div>
+    <button ng-click='diffCtrl.goToDifficulty()'>Go</button>
+    <ul>
+      <li > <!-- Repeated for each option -->
+        <input type="radio">
+          <label><!-- Option text --></label>
+      </li>
+    </ul>
+    
+    </div>

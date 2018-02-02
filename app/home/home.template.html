@@ -1,0 +1,15 @@
+<div ng-repeat="question in questions | filter: search" class="question-wrapper">
+    <div>Hello 2</div>
+    <h3>{{question.question}}</h3>
+    <div class='{green: question.labelDifficulty == 'Easy', yellow: question.labelDifficulty == 'Medium', red: question.labelDifficulty == 'Hard'}'>{{question.difficulty}}</div>
+    <div class="gear" >
+      <img src="/styles/assets/gear.svg" alt="">
+    </div>
+    <ul>
+      <li > <!-- Repeated for each option -->
+        <input type="radio">
+          <label><!-- Option text --></label>
+      </li>
+    </ul>
+    
+    </div>

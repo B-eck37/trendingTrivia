@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='trendingApp'>
 
 <head>
   <meta charset="utf-8">
@@ -17,8 +17,8 @@
   </header>
   <article>
     <nav>
-      <a>All Questions</a>
-      <a>Easy</a>
+      <a ui-sref='home'>All Questions</a>
+      <a ui-sref='difficulty'>Easy</a>
       <a>Medium</a>
       <a>Hard</a>
       <a>Search by Animal</a>
@@ -26,19 +26,26 @@
     <div class="search">
       <input type="text" placeholder="Animal to search by">
     </div>
-
+    <!-- <div>
+      Hello
+    </div> -->
+    <difficulty></difficulty>
+    <div ui-view>
+      Loading...
+      <ui-view></ui-view>
+    </div>
     <!-- Questions go here -->
 
   </article>
 
-  <div class="modal">
+  <!-- <div class="modal">
     <form>
       <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="<!-- Question -->">
-      <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
+      <span>Question</span><input type="text" ng-model="Question">
+      <span>Animal it's about</span><input type="text" ng-model="Animal">
       <span>Difficulty</span>
       <div class="range">
-        <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
+        <input type="range" min="1" max="3" ng-model="Difficulty">
 
         <h5>{{newQuestion.difficulty}}</h5>
       </div>
@@ -60,13 +67,13 @@
         <input type="text" ng-model="">
       </div>
 
-      <!--Add question buttons-->
+      Add question buttons
       <div class="buttons">
         <button class="green">Save Question</button>
         <button>Cancel</button>
       </div>
 
-      <!--Edit & Delete question buttons-->
+      Edit & Delete question buttons
       <div class="buttons">
         <button class="red">Delete Question</button>
         <button class="green">Save Changes</button>
@@ -74,14 +81,18 @@
       </div>
 
     </form>
-  </div>
+  </div> -->
 
 
 
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
-  <script src="./app.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" charset="utf-8"></script>
+  <script src="./app/app.js" charset="utf-8"></script>
+  <script src='./app/home/homeSrvc.js'></script>
+  <script src='./app/home/homeCtrl.js'></script>
+  <script src='./app/difficulty/difficulty.component.js'></script>
+  <script src='./app/difficulty/quesSrvc.js'></script>
 </body>
 
 </html>
